@@ -1,5 +1,5 @@
 '''
-you may have objects that change things in you application and
+you may have objects that change things in your application and
 you want to notify other objects about these changes
 
 '''
