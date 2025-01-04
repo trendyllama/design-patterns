@@ -1,9 +1,13 @@
 '''
 
-Strategy allows you to replace one algorith with another without changing the context.
+Strategy allows you to replace one algorithm with another without changing the context.
+
+this is very similar to the template method pattern, but the difference is that the
+template method pattern is used to define the steps of an algorithm, while the strategy pattern
+is used to define the algorithm itself.
 '''
 
-from typing import Protocol
+from typing import Protocol, Callable, Any
 
 class SortStrategy(Protocol):
     def sort(self, dataset: list) -> list: ...
@@ -58,3 +62,9 @@ class Context:
     def execute(self, dataset: list) -> list:
 
         return self.strategy.sort(dataset)
+
+
+
+# Functional approach
+def execute_sort_strategy(strategy_function: Callable, dataset: Any):
+    return strategy_function(dataset)

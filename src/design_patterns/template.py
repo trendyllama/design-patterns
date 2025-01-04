@@ -5,8 +5,7 @@ in the superclass but lets subclasses override specific steps of the algorithm w
 
 '''
 
-
-from typing import Protocol
+from typing import Protocol, Callable
 
 class AlgoirthmTemplate(Protocol):
     def step1(self): ...
@@ -36,3 +35,10 @@ class ConcreteAlgorithm2(AlgoirthmTemplate):
     def step3(self):
         print('ConcreteAlgorithm2 step3')
 
+
+
+#Functional approach
+def execute_template(step1: Callable, step2: Callable, step3: Callable):
+    step1()
+    step2()
+    step3()
