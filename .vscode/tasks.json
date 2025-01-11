@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Lint with Ruff",
+            "type": "shell",
+            "command": "uv run ruff check",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Format with Ruff",
+            "type": "shell",
+            "command": "uv run ruff format",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Test with Pytest",
+            "type": "shell",
+            "command": "pytest",
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "Main Workflow",
+            "dependsOn": [
+                "Lint with Ruff",
+                "Format with Ruff",
+                "Test with Pytest"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

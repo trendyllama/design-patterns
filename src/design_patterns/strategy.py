@@ -1,13 +1,14 @@
-'''
+"""
 
 Strategy allows you to replace one algorithm with another without changing the context.
 
 this is very similar to the template method pattern, but the difference is that the
 template method pattern is used to define the steps of an algorithm, while the strategy pattern
 is used to define the algorithm itself.
-'''
+"""
 
 from typing import Protocol, Callable, Any
+
 
 class SortStrategy(Protocol):
     def sort(self, dataset: list) -> list: ...
@@ -15,7 +16,6 @@ class SortStrategy(Protocol):
 
 class BubbleSortStrategy(SortStrategy):
     def sort(self, dataset: list) -> list:
-
         dataset = dataset.copy()
 
         n = len(dataset)
@@ -25,13 +25,11 @@ class BubbleSortStrategy(SortStrategy):
                 if dataset[j] > dataset[j + 1]:
                     dataset[j], dataset[j + 1] = dataset[j + 1], dataset[j]
 
-
         return dataset
 
 
 class QuickSortStrategy(SortStrategy):
     def sort(self, dataset):
-
         dataset = dataset.copy()
 
         if len(dataset) <= 1:
@@ -58,11 +56,8 @@ class Context:
     def set_strategy(self, strategy: SortStrategy):
         self.strategy = strategy
 
-
     def execute(self, dataset: list) -> list:
-
         return self.strategy.sort(dataset)
-
 
 
 # Functional approach
