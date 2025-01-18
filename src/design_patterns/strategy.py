@@ -1,9 +1,12 @@
 """
 
-Strategy allows you to replace one algorithm with another without changing the context.
+Strategy allows you to replace one algorithm with another without
+changing the context.
 
-this is very similar to the template method pattern, but the difference is that the
-template method pattern is used to define the steps of an algorithm, while the strategy pattern
+this is very similar to the template method pattern, but the
+difference is that the
+template method pattern is used to define the steps of an algorithm,
+while the strategy pattern
 is used to define the algorithm itself.
 """
 
