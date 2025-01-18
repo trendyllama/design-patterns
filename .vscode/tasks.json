@@ -23,11 +23,17 @@
             "problemMatcher": []
         },
         {
+            "label": "Clean",
+            "type": "shell",
+            "command": "find . | grep -E \"test|src\" | grep __pycache__ | xargs rm -rf",
+        },
+        {
             "label": "Main Workflow",
             "dependsOn": [
                 "Lint with Ruff",
                 "Format with Ruff",
-                "Test with Pytest"
+                "Test with Pytest",
+                "Clean",
             ],
             "group": {
                 "kind": "build",
